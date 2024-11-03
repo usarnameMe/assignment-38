@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Detail</title>
+</head>
+    <body>
+    {% extends 'base.html' %}
+
+        {% block content %}
+            <h1 class="text-center">{{book.title}}</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Title</h2>
+                    <p class="card-text">{{book.description}}</p>
+                    <p class="card-text">{{ book.genre }}</p>
+                    <p class="card-text">{{ book.release_date }}</p>
+                    <h2 class="card-title">Thoughts</h2>
+                    <p class="card-text">{{ book.personal_thoughts }}</p>
+                </div>
+            </div>
+        {% endblock %}
+    </body>
+</html>
+
+

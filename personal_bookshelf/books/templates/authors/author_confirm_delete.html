@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Delete</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+        {% block content %}
+        <h1 class="text-center">Delete Author</h1>
+        <div class="alert alert-danger" role="alert">
+            Are you sure you want to delete {{author.name}} {{author.surname}}
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Yes, delete</button>
+            </form>
+            <a href="{% url 'author_detail' author.pk %}" class="btn btn-primary">No, take me back</a>
+        </div>
+    {% endblock %}
+</body>
+</html>

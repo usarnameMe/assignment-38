@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Delete</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <h1 class="text-center">Delete Book</h1>
+    <div class="alert alert-danger" role="alert">
+        Are you sure you want to delete {{book.title}}
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Yes, delete</button>
+        </form>
+        <a href="{% url 'book_detail' book.pk %}" class="btn btn-primary">No, take me back</a>
+        {% endblock %}
+    </div>
+</body>
+</html>
+

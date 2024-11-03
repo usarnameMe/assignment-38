@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+</head>
+    <body>
+        {% extends 'base.html' %}
+            {% block content %}
+                <h1 class="text-center">Books</h1>
+                {% for book in books %}
+                            <h2 class="card-title"><a href="{% url 'book_detail' book.pk %}">Title: {{book.title}}</a></h2>
+                {% empty %}
+                    <p>No books available...</p>
+                {% endfor %}
+            {% endblock %}
+    </body>
+</html>

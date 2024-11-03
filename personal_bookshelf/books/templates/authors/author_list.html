@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author list</title>
+</head>
+    <body>
+        {% extends 'base.html' %}
+
+        {% block content %}
+            <h1 class="text-center">Authors</h1>
+            {% for author in authors %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title"><a href="{% url 'author_detail' author.pk %}">
+                            {{author.name}} {{author.surname}}
+                        </a></h2>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No authors available...</p>
+            {% endfor %}
+        {% endblock %}
+    </body>
+</html>
